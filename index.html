@@ -2,723 +2,262 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="QuickTools - Free online image and PDF tools. Fast, simple and private.">
-<title>QuickTools — Free Online Tools</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="QuickTools - Free online image and PDF tools">
+<title>QuickTools - Free Online Tools</title>
 
 <style>
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f7fb;
-color:#172033;
-}
-
-header{
-background:linear-gradient(135deg,#1769ff,#6c3cff);
-color:#fff;
-padding:48px 18px 55px;
-text-align:center;
-}
-
-header h1{
-font-size:42px;
-margin:0 0 10px;
-}
-
-header p{
-font-size:17px;
-margin:0;
-color:#e9edff;
-}
-
-.hero-btn{
-display:inline-block;
-margin-top:22px;
-padding:13px 22px;
-border-radius:12px;
-background:#fff;
-color:#1769ff;
-text-decoration:none;
-font-weight:800;
-}
-
-nav{
-position:sticky;
-top:0;
-z-index:20;
-display:flex;
-gap:8px;
-overflow:auto;
-background:#fff;
-padding:12px;
-border-bottom:1px solid #e4e8f0;
-}
-
-nav button{
-border:0;
-background:#eef2ff;
-color:#29406d;
-padding:11px 15px;
-border-radius:22px;
-white-space:nowrap;
-font-weight:800;
-cursor:pointer;
-}
-
-nav button.active{
-background:#1769ff;
-color:#fff;
-}
-
-main{
-max-width:980px;
-margin:auto;
-padding:25px 15px;
-}
-
-.home{
-display:block;
-}
-
-.home h2{
-text-align:center;
-font-size:28px;
-margin:10px 0 8px;
-}
-
-.home-sub{
-text-align:center;
-color:#68758a;
-margin:0 0 25px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-gap:16px;
-}
-
-.card{
-background:#fff;
-border:1px solid #e3e8f0;
-border-radius:18px;
-padding:22px;
-box-shadow:0 7px 25px rgba(30,50,90,.06);
-cursor:pointer;
-transition:.2s;
-}
-
-.card:hover{
-transform:translateY(-3px);
-box-shadow:0 12px 30px rgba(30,50,90,.11);
-}
-
-.icon{
-font-size:34px;
-}
-
-.card h3{
-margin:12px 0 7px;
-}
-
-.card p{
-margin:0;
-color:#68758a;
-line-height:1.45;
-}
-
-.badge{
-display:inline-block;
-margin-top:14px;
-padding:5px 9px;
-border-radius:20px;
-background:#eef2ff;
-color:#1769ff;
-font-size:12px;
-font-weight:800;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:12px;
-margin:28px 0;
-}
-
-.feature{
-background:#fff;
-border-radius:15px;
-padding:18px;
-text-align:center;
-border:1px solid #e5e9f1;
-}
-
-.feature b{
-display:block;
-margin:8px 0;
-}
-
-.feature span{
-font-size:13px;
-color:#68758a;
-}
-
-.tool{
-display:none;
-background:#fff;
-border-radius:20px;
-padding:25px;
-box-shadow:0 8px 30px rgba(20,40,80,.08);
-}
-
-.tool.active{
-display:block;
-}
-
-.tool h2{
-margin-top:0;
-}
-
-.muted{
-color:#68758a;
-}
-
-.drop{
-border:2px dashed #b9c5d8;
-border-radius:18px;
-padding:40px 20px;
-text-align:center;
-background:#fafcff;
-cursor:pointer;
-}
-
-.drop:hover{
-border-color:#1769ff;
-background:#f1f6ff;
-}
-
-.drop strong{
-display:block;
-font-size:19px;
-margin-bottom:8px;
-}
-
-.drop span{
-color:#718096;
-}
-
-.drop input{
-display:none;
-}
-
-.row{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-top:18px;
-}
-
-.btn{
-border:0;
-border-radius:12px;
-padding:13px 20px;
-background:#1769ff;
-color:#fff;
-font-weight:800;
-cursor:pointer;
-}
-
-.btn:disabled{
-opacity:.45;
-cursor:not-allowed;
-}
-
-.btn.secondary{
-background:#eaf0ff;
-color:#1769ff;
-}
-
-.result{
-margin-top:18px;
-padding:15px;
-background:#f1f6ff;
-border-radius:12px;
-}
-
-.preview-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
-margin-top:18px;
-}
-
-.preview-card{
-border:1px solid #dce3ee;
-border-radius:15px;
-padding:10px;
-background:#fff;
-}
-
-.preview-card img{
-width:100%;
-display:block;
-border-radius:10px;
-}
-
-.preview-card button{
-width:100%;
-margin-top:10px;
-}
-
-.status{
-margin-top:15px;
-font-weight:800;
-}
-
-input[type="range"]{
-width:100%;
-}
-
-footer{
-text-align:center;
-padding:30px;
-color:#718096;
-}
-
-@media(max-width:600px){
-
-header h1{
-font-size:34px;
-}
-
-.tool{
-padding:18px;
-}
-
-}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+header{background:linear-gradient(135deg,#1769ff,#6c3cff);color:#fff;text-align:center;padding:45px 15px}
+header h1{font-size:40px;margin:0 0 10px}
+header p{margin:0;color:#e8edff}
+.hero{display:inline-block;margin-top:20px;background:#fff;color:#1769ff;padding:12px 20px;border-radius:12px;font-weight:bold;text-decoration:none}
+nav{position:sticky;top:0;z-index:10;background:#fff;display:flex;gap:8px;overflow:auto;padding:12px;border-bottom:1px solid #ddd}
+nav button{border:0;background:#eef2ff;color:#29406d;padding:11px 15px;border-radius:22px;font-weight:bold;white-space:nowrap;cursor:pointer}
+nav button.active{background:#1769ff;color:#fff}
+main{max-width:980px;margin:auto;padding:25px 15px}
+.home h2{text-align:center}
+.sub{text-align:center;color:#68758a}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #e3e8f0;border-radius:18px;padding:22px;box-shadow:0 7px 25px #1e325a0f;cursor:pointer}
+.card:hover{transform:translateY(-2px)}
+.icon{font-size:34px}
+.card h3{margin:10px 0 7px}
+.card p{color:#68758a;margin:0;line-height:1.5}
+.badge{display:inline-block;margin-top:13px;padding:5px 9px;border-radius:20px;background:#eef2ff;color:#1769ff;font-size:12px;font-weight:bold}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:28px 0}
+.feature{background:#fff;border:1px solid #e3e8f0;border-radius:15px;padding:18px;text-align:center}
+.feature b{display:block;margin:7px}
+.feature span{font-size:13px;color:#68758a}
+.tool{display:none;background:#fff;border-radius:20px;padding:24px;box-shadow:0 8px 30px #14285012}
+.tool.active{display:block}
+.muted{color:#68758a}
+.drop{border:2px dashed #b9c5d8;border-radius:18px;padding:35px 20px;text-align:center;background:#fafcff;cursor:pointer}
+.drop:hover{border-color:#1769ff;background:#f1f6ff}
+.drop strong{display:block;font-size:18px;margin-bottom:7px}
+.drop span{color:#718096}
+.drop input{display:none}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.btn{border:0;border-radius:12px;padding:12px 18px;background:#1769ff;color:#fff;font-weight:bold;cursor:pointer}
+.btn:disabled{opacity:.45}
+.secondary{background:#eaf0ff;color:#1769ff}
+.result{margin-top:15px;padding:14px;border-radius:12px;background:#f1f6ff}
+.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:18px}
+.option{background:#f7f9fd;border:1px solid #e1e7f0;border-radius:12px;padding:12px}
+.option label{display:block;font-weight:bold;font-size:13px;margin-bottom:7px}
+.option select,.option input{width:100%;padding:10px;border:1px solid #ccd5e3;border-radius:9px;background:#fff}
+.preview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:18px}
+.preview-card{border:1px solid #dce3ee;border-radius:15px;padding:10px;background:#fff}
+.preview-card img{width:100%;display:block;border-radius:10px}
+.preview-card button{width:100%;margin-top:10px}
+.status{margin-top:14px;font-weight:bold}
+footer{text-align:center;color:#718096;padding:30px}
+@media(max-width:600px){header h1{font-size:33px}.tool{padding:18px}}
 </style>
 </head>
 
 <body>
 
 <header>
-
 <h1>⚡ QuickTools</h1>
-
-<p>
-Free online tools — fast, simple & private
-</p>
-
-<a class="hero-btn" href="#tools">
-Explore Tools
-</a>
-
+<p>Free online tools — fast, simple & private</p>
+<a class="hero" href="#tools">Explore Tools</a>
 </header>
 
 <nav>
-
-<button class="active" data-tool="home">
-🏠 Home
-</button>
-
-<button data-tool="compress">
-🗜️ Compress Image
-</button>
-
-<button data-tool="imgpdf">
-🖼️ Image → PDF
-</button>
-
-<button data-tool="pdfimg">
-📄 PDF → Image
-</button>
-
+<button class="active" data-tool="home">🏠 Home</button>
+<button data-tool="compress">🗜️ Compress Image</button>
+<button data-tool="imgpdf">🖼️ Image → PDF</button>
+<button data-tool="pdfimg">📄 PDF → Image</button>
 </nav>
 
 <main>
 
 <section id="home" class="home">
 
-<h2 id="tools">
-All Tools
-</h2>
-
-<p class="home-sub">
-Useful tools that work directly in your browser.
-</p>
+<h2 id="tools">All Tools</h2>
+<p class="sub">Useful tools that work directly in your browser.</p>
 
 <div class="cards">
 
 <div class="card" data-open="compress">
-
 <div class="icon">🗜️</div>
-
-<h3>
-Image Compressor
-</h3>
-
-<p>
-Reduce image file size quickly.
-</p>
-
-<span class="badge">
-FREE
-</span>
-
+<h3>Image Compressor</h3>
+<p>Compress images to a chosen target size.</p>
+<span class="badge">FREE</span>
 </div>
-
 
 <div class="card" data-open="imgpdf">
-
 <div class="icon">🖼️</div>
-
-<h3>
-Image to PDF
-</h3>
-
-<p>
-Turn one or more images into a PDF.
-</p>
-
-<span class="badge">
-FREE
-</span>
-
+<h3>Image to PDF</h3>
+<p>Convert multiple images into one PDF.</p>
+<span class="badge">FREE</span>
 </div>
-
 
 <div class="card" data-open="pdfimg">
-
 <div class="icon">📄</div>
-
-<h3>
-PDF to Image
-</h3>
-
-<p>
-Convert PDF pages into PNG images.
-</p>
-
-<span class="badge">
-FREE
-</span>
-
+<h3>PDF to Image</h3>
+<p>Convert PDF pages into PNG images.</p>
+<span class="badge">FREE</span>
 </div>
 
 </div>
-
 
 <div class="features">
 
-<div class="feature">
-🔒
-<b>Private</b>
-<span>
-Files are processed in your browser.
-</span>
-</div>
-
-<div class="feature">
-⚡
-<b>Fast</b>
-<span>
-No account needed.
-</span>
-</div>
-
-<div class="feature">
-📱
-<b>Mobile Friendly</b>
-<span>
-Works on phones and laptops.
-</span>
-</div>
-
-<div class="feature">
-🆓
-<b>Free</b>
-<span>
-No subscription or credits.
-</span>
-</div>
+<div class="feature">🔒<b>Private</b><span>Files stay in your browser.</span></div>
+<div class="feature">⚡<b>Fast</b><span>No account required.</span></div>
+<div class="feature">📱<b>Mobile Friendly</b><span>Works on phone and laptop.</span></div>
+<div class="feature">🆓<b>Free</b><span>No credits required.</span></div>
 
 </div>
 
-
-<h2>
-Coming Soon
-</h2>
-
-<p class="home-sub">
-More useful tools will be added.
-</p>
+<h2>Coming Soon</h2>
+<p class="sub">More useful tools are coming.</p>
 
 <div class="cards">
 
 <div class="card">
-
-<div class="icon">
-🗜️
+<div class="icon">🗜️</div>
+<h3>PDF Compressor</h3>
+<p>Reduce PDF file size.</p>
+<span class="badge">SOON</span>
 </div>
-
-<h3>
-PDF Compressor
-</h3>
-
-<p>
-Reduce PDF file size.
-</p>
-
-<span class="badge">
-SOON
-</span>
-
-</div>
-
 
 <div class="card">
-
-<div class="icon">
-🔀
+<div class="icon">🔀</div>
+<h3>Merge PDF</h3>
+<p>Combine multiple PDFs.</p>
+<span class="badge">SOON</span>
 </div>
-
-<h3>
-Merge PDF
-</h3>
-
-<p>
-Combine multiple PDFs.
-</p>
-
-<span class="badge">
-SOON
-</span>
-
-</div>
-
 
 <div class="card">
-
-<div class="icon">
-📐
-</div>
-
-<h3>
-Image Resize
-</h3>
-
-<p>
-Resize images to any dimension.
-</p>
-
-<span class="badge">
-SOON
-</span>
-
+<div class="icon">📐</div>
+<h3>Image Resize</h3>
+<p>Resize images easily.</p>
+<span class="badge">SOON</span>
 </div>
 
 </div>
 
 </section>
 
+
+<!-- COMPRESSOR -->
 
 <section id="compress" class="tool">
 
-<h2>
-🗜️ Image Compressor
-</h2>
-
-<p class="muted">
-Reduce image size directly in your browser.
-</p>
+<h2>🗜️ Image Compressor</h2>
+<p class="muted">Choose your target size and compress the image.</p>
 
 <div class="drop" id="compressDrop">
-
-<strong>
-Choose an image
-</strong>
-
-<span>
-JPG, PNG or WebP
-</span>
-
-<input
-id="compFile"
-type="file"
-accept="image/*"
->
-
+<strong>Choose an image</strong>
+<span>JPG, PNG or WebP</span>
+<input id="compFile" type="file" accept="image/*">
 </div>
 
-<div
-id="compressOptions"
-style="display:none"
->
+<div id="compressOptions" style="display:none">
 
-<p>
-<b>
-Quality:
-<span id="qualityText">
-70%
-</span>
-</b>
-</p>
+<div class="options">
 
-<input
-id="quality"
-type="range"
-min="10"
-max="100"
-value="70"
->
+<div class="option">
+<label>🎯 Target Size</label>
+
+<select id="targetSize">
+<option value="100">100 KB</option>
+<option value="200">200 KB</option>
+<option value="500" selected>500 KB</option>
+<option value="1024">1 MB</option>
+<option value="custom">Custom</option>
+</select>
+</div>
+
+<div class="option" id="customBox" style="display:none">
+<label>Custom Size (KB)</label>
+<input id="customSize" type="number" min="10" value="300">
+</div>
+
+<div class="option">
+<label>📐 Maximum Dimension</label>
+
+<select id="maxDimension">
+<option value="1200">1200 px</option>
+<option value="1600">1600 px</option>
+<option value="2000" selected>2000 px</option>
+<option value="3000">3000 px</option>
+<option value="5000">Original</option>
+</select>
+</div>
+
+<div class="option">
+<label>🎚️ Quality</label>
+
+<select id="quality">
+<option value="0.95">Very High</option>
+<option value="0.85" selected>High</option>
+<option value="0.70">Medium</option>
+<option value="0.55">Low</option>
+</select>
+</div>
+
+</div>
 
 <div class="row">
-
-<button
-class="btn"
-id="compressBtn"
->
-Compress & Download
-</button>
-
+<button class="btn" id="compressBtn">🗜️ Compress & Download</button>
 </div>
 
-<div
-id="compressResult"
-class="result"
->
-</div>
+<div id="compressResult" class="result"></div>
 
 </div>
 
 </section>
 
+
+<!-- IMAGE PDF -->
 
 <section id="imgpdf" class="tool">
 
-<h2>
-🖼️ Image to PDF
-</h2>
+<h2>🖼️ Image to PDF</h2>
+<p class="muted">Select one or multiple images.</p>
 
-<p class="muted">
-Select one or multiple images and create a PDF.
-</p>
-
-<div
-class="drop"
-id="imagePdfDrop"
->
-
-<strong>
-Select Images
-</strong>
-
-<span>
-JPG, PNG or WebP
-</span>
-
-<input
-id="pdfFiles"
-type="file"
-accept="image/*"
-multiple
->
-
+<div class="drop" id="imagePdfDrop">
+<strong>Select Images</strong>
+<span>JPG, PNG or WebP</span>
+<input id="pdfFiles" type="file" accept="image/*" multiple>
 </div>
 
-<div
-id="imagePdfResult"
-class="result"
-style="display:none"
->
-</div>
+<div id="imagePdfResult" class="result" style="display:none"></div>
 
-<div
-class="preview-grid"
-id="imagePreview"
->
-</div>
+<div id="imagePreview" class="preview-grid"></div>
 
 <div class="row">
-
-<button
-class="btn"
-id="makePdf"
-disabled
->
-📄 Create PDF
-</button>
-
+<button class="btn" id="makePdf" disabled>📄 Create PDF</button>
 </div>
 
 </section>
 
 
+<!-- PDF IMAGE -->
+
 <section id="pdfimg" class="tool">
 
-<h2>
-📄 PDF to Image
-</h2>
+<h2>📄 PDF to Image</h2>
+<p class="muted">Convert every PDF page into a PNG image.</p>
 
-<p class="muted">
-Convert every PDF page into a PNG image.
-</p>
-
-<div
-class="drop"
-id="pdfImageDrop"
->
-
-<strong>
-Choose a PDF
-</strong>
-
-<span>
-PDF files only
-</span>
-
-<input
-id="pdfInput"
-type="file"
-accept="application/pdf,.pdf"
->
-
+<div class="drop" id="pdfImageDrop">
+<strong>Choose a PDF</strong>
+<span>PDF files only</span>
+<input id="pdfInput" type="file" accept="application/pdf,.pdf">
 </div>
 
-<div
-id="pdfStatus"
-class="status"
->
-</div>
+<div id="pdfStatus" class="status"></div>
 
-<div
-id="pdfPages"
-class="preview-grid"
->
-</div>
+<div id="pdfPages" class="preview-grid"></div>
 
 <div class="row">
-
-<button
-class="btn"
-id="downloadAll"
-disabled
->
-⬇️ Download All
-</button>
-
-<button
-class="btn secondary"
-id="clearPdf"
-disabled
->
-Clear
-</button>
-
+<button class="btn" id="downloadAll" disabled>⬇️ Download All</button>
+<button class="btn secondary" id="clearPdf" disabled>Clear</button>
 </div>
 
 </section>
@@ -726,54 +265,36 @@ Clear
 </main>
 
 <footer>
-
 © 2026 QuickTools • Free browser-based tools
-
 </footer>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js">
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
 
 <script>
 
-const $ = id =>
-document.getElementById(id);
+const $ = id => document.getElementById(id);
 
 
 /* NAVIGATION */
 
 function showTool(id){
 
-document
-.querySelectorAll("nav button")
-.forEach(button => {
-
-button.classList.toggle(
-"active",
-button.dataset.tool === id
-);
-
+document.querySelectorAll("nav button").forEach(b=>{
+b.classList.toggle("active",b.dataset.tool===id);
 });
 
-document
-.querySelectorAll(".home,.tool")
-.forEach(section => {
-
-section.style.display = "none";
-
+document.querySelectorAll(".home,.tool").forEach(s=>{
+s.style.display="none";
 });
 
-const target = $(id);
+const section=$(id);
 
-if(target){
-
-target.style.display = "block";
-
+if(section){
+section.style.display="block";
 }
 
 window.scrollTo({
@@ -783,195 +304,226 @@ behavior:"smooth"
 
 }
 
+document.querySelectorAll("nav button").forEach(b=>{
+b.addEventListener("click",()=>{
+showTool(b.dataset.tool);
+});
+});
 
-document
-.querySelectorAll("nav button")
-.forEach(button => {
-
-button.addEventListener(
-"click",
-() => showTool(button.dataset.tool)
-);
-
+document.querySelectorAll("[data-open]").forEach(c=>{
+c.addEventListener("click",()=>{
+showTool(c.dataset.open);
+});
 });
 
 
-document
-.querySelectorAll("[data-open]")
-.forEach(card => {
+/* COMPRESSOR */
 
-card.addEventListener(
-"click",
-() => showTool(card.dataset.open)
-);
+let selectedImage=null;
+let selectedName="image";
+let originalSize=0;
 
+$("compressDrop").addEventListener("click",()=>{
+$("compFile").click();
 });
 
+$("compFile").addEventListener("change",e=>{
 
-/* IMAGE COMPRESSOR */
+const file=e.target.files[0];
 
-let selectedImage = null;
+if(!file)return;
 
-let selectedImageName = "image";
+originalSize=file.size;
 
+selectedName=file.name.replace(/\.[^/.]+$/,"");
 
-$("compressDrop")
-.addEventListener(
-"click",
-() => $("compFile").click()
-);
+const url=URL.createObjectURL(file);
 
+const image=new Image();
 
-$("compFile")
-.addEventListener(
-"change",
-event => {
+image.onload=()=>{
 
-const file =
-event.target.files[0];
+selectedImage=image;
 
-if(!file){
+$("compressOptions").style.display="block";
 
-return;
-
-}
-
-selectedImageName =
-file.name.replace(
-/\.[^/.]+$/,
-""
-);
-
-const url =
-URL.createObjectURL(file);
-
-const image =
-new Image();
-
-
-image.onload = () => {
-
-selectedImage =
-image;
-
-$("compressOptions")
-.style.display =
-"block";
-
-$("compressResult")
-.textContent =
-"Selected: " +
-file.name +
-" • " +
-Math.round(
-file.size / 1024
-) +
-" KB";
+$("compressResult").innerHTML=
+"<b>Original:</b> "+
+formatSize(originalSize);
 
 URL.revokeObjectURL(url);
 
 };
 
-
-image.src = url;
-
-});
-
-
-$("quality")
-.addEventListener(
-"input",
-event => {
-
-$("qualityText")
-.textContent =
-event.target.value +
-"%";
+image.src=url;
 
 });
 
 
-$("compressBtn")
-.addEventListener(
-"click",
-() => {
+$("targetSize").addEventListener("change",()=>{
 
-if(!selectedImage){
+$("customBox").style.display=
+$("targetSize").value==="custom"
+?"block":"none";
 
-alert(
-"Please choose an image first."
-);
+});
 
-return;
 
+function formatSize(bytes){
+
+if(bytes<1024){
+return bytes+" B";
 }
 
-const quality =
-Number(
-$("quality").value
-) / 100;
+if(bytes<1024*1024){
+return (bytes/1024).toFixed(1)+" KB";
+}
 
-let width =
-selectedImage.naturalWidth;
-
-let height =
-selectedImage.naturalHeight;
-
-
-if(
-Math.max(width,height) > 2000
-){
-
-const scale =
-2000 /
-Math.max(width,height);
-
-width =
-Math.round(width * scale);
-
-height =
-Math.round(height * scale);
+return (bytes/1024/1024).toFixed(2)+" MB";
 
 }
 
 
-const canvas =
-document.createElement(
-"canvas"
-);
+function makeJpegBlob(image,width,height,quality){
 
-canvas.width =
-width;
+return new Promise(resolve=>{
 
-canvas.height =
-height;
+const canvas=document.createElement("canvas");
 
+canvas.width=width;
+canvas.height=height;
 
-canvas
-.getContext("2d")
-.drawImage(
-selectedImage,
+const ctx=canvas.getContext("2d");
+
+ctx.fillStyle="#fff";
+ctx.fillRect(0,0,width,height);
+
+ctx.drawImage(
+image,
 0,
 0,
 width,
 height
 );
 
-
 canvas.toBlob(
-blob => {
+blob=>resolve(blob),
+"image/jpeg",
+quality
+);
 
-const url =
-URL.createObjectURL(blob);
+});
 
-const link =
-document.createElement("a");
+}
 
-link.href =
-url;
 
-link.download =
-selectedImageName +
+$("compressBtn").addEventListener("click",async()=>{
+
+if(!selectedImage){
+
+alert("Please choose an image first.");
+
+return;
+
+}
+
+let targetKB;
+
+if($("targetSize").value==="custom"){
+
+targetKB=parseInt($("customSize").value);
+
+if(!targetKB || targetKB<10){
+
+alert("Enter a valid target size.");
+
+return;
+
+}
+
+}else{
+
+targetKB=parseInt($("targetSize").value);
+
+}
+
+const targetBytes=targetKB*1024;
+
+let width=selectedImage.naturalWidth;
+let height=selectedImage.naturalHeight;
+
+const max=parseInt($("maxDimension").value);
+
+if(max<5000 && Math.max(width,height)>max){
+
+const scale=max/Math.max(width,height);
+
+width=Math.round(width*scale);
+height=Math.round(height*scale);
+
+}
+
+let quality=parseFloat($("quality").value);
+
+let blob=await makeJpegBlob(
+selectedImage,
+width,
+height,
+quality
+);
+
+
+/* AUTOMATIC QUALITY SEARCH */
+
+for(let i=0;i<8 && blob.size>targetBytes;i++){
+
+quality-=0.08;
+
+if(quality<0.15){
+break;
+}
+
+blob=await makeJpegBlob(
+selectedImage,
+width,
+height,
+quality
+);
+
+}
+
+
+/* IF STILL TOO LARGE, REDUCE DIMENSIONS */
+
+let attempts=0;
+
+while(blob.size>targetBytes && attempts<6){
+
+width=Math.round(width*0.85);
+height=Math.round(height*0.85);
+
+blob=await makeJpegBlob(
+selectedImage,
+width,
+height,
+Math.max(0.35,quality)
+);
+
+attempts++;
+
+}
+
+
+/* DOWNLOAD */
+
+const url=URL.createObjectURL(blob);
+
+const link=document.createElement("a");
+
+link.href=url;
+
+link.download=
+selectedName+
 "-compressed.jpg";
 
 document.body.appendChild(link);
@@ -980,275 +532,171 @@ link.click();
 
 link.remove();
 
+$("compressResult").innerHTML=
+"<b>Original:</b> "+
+formatSize(originalSize)+
+"<br><b>Final:</b> "+
+formatSize(blob.size)+
+"<br><b>Target:</b> "+
+targetKB+
+" KB"+
+"<br><b>Dimensions:</b> "+
+width+
+" × "+
+height+
+" px";
 
-$("compressResult")
-.textContent =
-"Done! New size: " +
-Math.round(
-blob.size / 1024
-) +
-" KB";
-
-
-setTimeout(
-() =>
-URL.revokeObjectURL(url),
-1000
-);
-
-},
-"image/jpeg",
-quality
-);
+setTimeout(()=>{
+URL.revokeObjectURL(url);
+},1500);
 
 });
 
 
 /* IMAGE TO PDF */
 
-let selectedPdfImages = [];
+let selectedImages=[];
+
+$("imagePdfDrop").addEventListener("click",()=>{
+$("pdfFiles").click();
+});
 
 
-$("imagePdfDrop")
-.addEventListener(
-"click",
-() => $("pdfFiles").click()
-);
+$("pdfFiles").addEventListener("change",e=>{
 
+selectedImages=Array.from(e.target.files);
 
-$("pdfFiles")
-.addEventListener(
-"change",
-event => {
+$("imagePdfResult").style.display="block";
 
-selectedPdfImages =
-Array.from(
-event.target.files
-);
-
-
-$("imagePdfResult")
-.style.display =
-"block";
-
-
-$("imagePdfResult")
-.textContent =
-selectedPdfImages.length +
+$("imagePdfResult").textContent=
+selectedImages.length+
 " image(s) selected.";
 
+$("makePdf").disabled=
+selectedImages.length===0;
 
-$("makePdf")
-.disabled =
-selectedPdfImages.length === 0;
+const preview=$("imagePreview");
 
+preview.innerHTML="";
 
-const preview =
-$("imagePreview");
+selectedImages.forEach(file=>{
 
-preview.innerHTML = "";
+const card=document.createElement("div");
 
+card.className="preview-card";
 
-selectedPdfImages.forEach(
-file => {
+const img=document.createElement("img");
 
-const card =
-document.createElement(
-"div"
-);
+img.src=URL.createObjectURL(file);
 
-card.className =
-"preview-card";
-
-
-const image =
-document.createElement(
-"img"
-);
-
-image.src =
-URL.createObjectURL(file);
-
-
-card.appendChild(image);
+card.appendChild(img);
 
 preview.appendChild(card);
 
-}
-);
+});
 
 });
 
 
-function fileToDataURL(file){
+function readDataURL(file){
 
-return new Promise(
-(resolve,reject) => {
+return new Promise((resolve,reject)=>{
 
-const reader =
-new FileReader();
+const reader=new FileReader();
 
-reader.onload =
-() => resolve(
-reader.result
-);
+reader.onload=()=>resolve(reader.result);
 
-reader.onerror =
-reject;
+reader.onerror=reject;
 
-reader.readAsDataURL(
-file
-);
+reader.readAsDataURL(file);
 
-}
-);
+});
 
 }
 
 
-function loadImage(src){
+function loadImg(src){
 
-return new Promise(
-(resolve,reject) => {
+return new Promise((resolve,reject)=>{
 
-const image =
-new Image();
+const img=new Image();
 
-image.onload =
-() => resolve(image);
+img.onload=()=>resolve(img);
 
-image.onerror =
-reject;
+img.onerror=reject;
 
-image.src =
-src;
+img.src=src;
 
-}
-);
+});
 
 }
 
 
-$("makePdf")
-.addEventListener(
-"click",
-async () => {
+$("makePdf").addEventListener("click",async()=>{
 
-if(
-!selectedPdfImages.length
-){
-
-alert(
-"Please select images first."
-);
+if(!selectedImages.length){
 
 return;
 
 }
 
+if(!window.jspdf){
 
-if(
-!window.jspdf
-){
-
-alert(
-"PDF library is loading. Please try again."
-);
+alert("PDF library is loading. Try again.");
 
 return;
 
 }
 
+const {jsPDF}=window.jspdf;
 
-const {
-jsPDF
-} =
-window.jspdf;
-
-
-const pdf =
-new jsPDF(
+const pdf=new jsPDF(
 "p",
 "mm",
 "a4"
 );
 
+for(let i=0;i<selectedImages.length;i++){
 
-for(
-let i = 0;
-i < selectedPdfImages.length;
-i++
-){
+const file=selectedImages[i];
 
-const file =
-selectedPdfImages[i];
+const src=await readDataURL(file);
 
-const src =
-await fileToDataURL(
-file
+const img=await loadImg(src);
+
+const maxW=190;
+const maxH=277;
+
+const scale=Math.min(
+maxW/img.naturalWidth,
+maxH/img.naturalHeight
 );
 
-const image =
-await loadImage(
-src
-);
+const w=img.naturalWidth*scale;
+const h=img.naturalHeight*scale;
 
-
-const maxWidth =
-190;
-
-const maxHeight =
-277;
-
-
-const scale =
-Math.min(
-maxWidth /
-image.naturalWidth,
-
-maxHeight /
-image.naturalHeight
-);
-
-
-const width =
-image.naturalWidth *
-scale;
-
-const height =
-image.naturalHeight *
-scale;
-
-
-if(i > 0){
-
+if(i>0){
 pdf.addPage();
-
 }
 
+let type="JPEG";
+
+if(file.type==="image/png"){
+type="PNG";
+}
 
 pdf.addImage(
 src,
-file.type ===
-"image/png"
-? "PNG"
-: "JPEG",
-
-(210 - width) / 2,
-
-(297 - height) / 2,
-
-width,
-
-height
+type,
+(210-w)/2,
+(297-h)/2,
+w,
+h
 );
 
 }
 
-
-pdf.save(
-"quicktools-images.pdf"
-);
+pdf.save("quicktools-images.pdf");
 
 });
 
@@ -1257,290 +705,166 @@ pdf.save(
 
 if(window.pdfjsLib){
 
-pdfjsLib
-.GlobalWorkerOptions
-.workerSrc =
+pdfjsLib.GlobalWorkerOptions.workerSrc=
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 }
 
-
-let renderedImages = [];
-
-
-$("pdfImageDrop")
-.addEventListener(
-"click",
-() => $("pdfInput").click()
-);
+let rendered=[];
 
 
-$("pdfInput")
-.addEventListener(
-"change",
-async event => {
+$("pdfImageDrop").addEventListener("click",()=>{
+$("pdfInput").click();
+});
 
-const file =
-event.target.files[0];
 
-if(!file){
+$("pdfInput").addEventListener("change",async e=>{
 
-return;
+const file=e.target.files[0];
 
-}
-
+if(!file)return;
 
 if(!window.pdfjsLib){
 
-alert(
-"PDF engine could not load. Check internet connection."
-);
+alert("PDF engine could not load. Check internet connection.");
 
 return;
 
 }
 
+rendered.forEach(x=>{
+URL.revokeObjectURL(x.url);
+});
 
-renderedImages
-.forEach(
-item =>
-URL.revokeObjectURL(
-item.url
-)
-);
+rendered=[];
 
+$("pdfPages").innerHTML="";
 
-renderedImages = [];
+$("downloadAll").disabled=true;
 
+$("clearPdf").disabled=false;
 
-$("pdfPages")
-.innerHTML = "";
-
-
-$("downloadAll")
-.disabled = true;
-
-
-$("clearPdf")
-.disabled = false;
-
-
-$("pdfStatus")
-.textContent =
-"Loading PDF...";
+$("pdfStatus").textContent="Loading PDF...";
 
 
 try{
 
-const buffer =
-await file.arrayBuffer();
+const buffer=await file.arrayBuffer();
 
-
-const pdf =
-await pdfjsLib.getDocument({
-data:
-new Uint8Array(buffer)
+const pdf=await pdfjsLib.getDocument({
+data:new Uint8Array(buffer)
 }).promise;
 
 
-for(
-let pageNumber = 1;
-pageNumber <= pdf.numPages;
-pageNumber++
-){
+for(let n=1;n<=pdf.numPages;n++){
 
-const page =
-await pdf.getPage(
-pageNumber
-);
+const page=await pdf.getPage(n);
 
-
-const base =
-page.getViewport({
+const base=page.getViewport({
 scale:1
 });
 
-
-const scale =
-Math.min(
+const scale=Math.min(
 2,
-1400 / base.width
+1400/base.width
 );
 
-
-const viewport =
-page.getViewport({
+const viewport=page.getViewport({
 scale:scale
 });
 
+const canvas=document.createElement("canvas");
 
-const canvas =
-document.createElement(
-"canvas"
-);
-
-
-canvas.width =
-Math.ceil(
-viewport.width
-);
-
-canvas.height =
-Math.ceil(
-viewport.height
-);
-
+canvas.width=Math.ceil(viewport.width);
+canvas.height=Math.ceil(viewport.height);
 
 await page.render({
-
-canvasContext:
-canvas.getContext("2d"),
-
-viewport:
-viewport
-
+canvasContext:canvas.getContext("2d"),
+viewport:viewport
 }).promise;
 
 
-const blob =
-await new Promise(
-resolve =>
+const blob=await new Promise(resolve=>{
 canvas.toBlob(
 resolve,
 "image/png"
-)
 );
+});
 
 
-const url =
-URL.createObjectURL(
-blob
-);
+const url=URL.createObjectURL(blob);
 
-
-const item = {
-
+const item={
 url:url,
-
-name:
-"page-" +
-pageNumber +
-".png"
-
+name:"page-"+n+".png"
 };
 
-
-renderedImages.push(
-item
-);
+rendered.push(item);
 
 
-const card =
-document.createElement(
-"div"
-);
+const card=document.createElement("div");
 
-card.className =
-"preview-card";
+card.className="preview-card";
 
 
-const title =
-document.createElement(
-"b"
-);
+const title=document.createElement("b");
 
-title.textContent =
-"Page " +
-pageNumber;
+title.textContent=
+"Page "+n;
 
 
-const image =
-document.createElement(
-"img"
-);
+const img=document.createElement("img");
 
-image.src =
-url;
+img.src=url;
 
 
-const download =
-document.createElement(
-"button"
-);
+const button=document.createElement("button");
 
-download.className =
-"btn";
+button.className="btn";
 
-download.textContent =
+button.textContent=
 "⬇️ Download";
 
 
-download.addEventListener(
-"click",
-() => {
+button.addEventListener("click",()=>{
 
-const link =
-document.createElement(
-"a"
-);
+const a=document.createElement("a");
 
-link.href =
-url;
+a.href=url;
 
-link.download =
-item.name;
+a.download=item.name;
 
-document.body.appendChild(
-link
-);
+a.click();
 
-link.click();
-
-link.remove();
-
-}
-);
+});
 
 
-card.appendChild(
-title
-);
+card.appendChild(title);
 
-card.appendChild(
-image
-);
+card.appendChild(img);
 
-card.appendChild(
-download
-);
+card.appendChild(button);
+
+$("pdfPages").appendChild(card);
 
 
-$("pdfPages")
-.appendChild(
-card
-);
-
-
-$("pdfStatus")
-.textContent =
-"Converted " +
-pageNumber +
-" of " +
-pdf.numPages +
+$("pdfStatus").textContent=
+"Converted "+
+n+
+" of "+
+pdf.numPages+
 " page(s).";
 
 }
 
 
-$("downloadAll")
-.disabled =
-renderedImages.length === 0;
+$("downloadAll").disabled=
+rendered.length===0;
 
 
-$("pdfStatus")
-.textContent =
-"✅ Done! " +
-renderedImages.length +
+$("pdfStatus").textContent=
+"✅ Done! "+
+rendered.length+
 " page(s) converted to PNG.";
 
 
@@ -1548,11 +872,8 @@ renderedImages.length +
 
 console.error(error);
 
-
-$("pdfStatus")
-.textContent =
+$("pdfStatus").textContent=
 "❌ Could not read this PDF.";
-
 
 alert(
 "PDF conversion failed. Please try another PDF."
@@ -1565,89 +886,51 @@ alert(
 
 /* DOWNLOAD ALL */
 
-$("downloadAll")
-.addEventListener(
-"click",
-() => {
+$("downloadAll").addEventListener("click",()=>{
 
-renderedImages
-.forEach(
-(item,index) => {
+rendered.forEach((item,index)=>{
 
-setTimeout(
-() => {
+setTimeout(()=>{
 
-const link =
-document.createElement(
-"a"
-);
+const a=document.createElement("a");
 
-link.href =
-item.url;
+a.href=item.url;
 
-link.download =
-item.name;
+a.download=item.name;
 
-document.body.appendChild(
-link
-);
+a.click();
 
-link.click();
+},index*300);
 
-link.remove();
-
-},
-index * 300
-);
-
-}
-);
+});
 
 });
 
 
 /* CLEAR */
 
-$("clearPdf")
-.addEventListener(
-"click",
-() => {
+$("clearPdf").addEventListener("click",()=>{
 
-renderedImages
-.forEach(
-item =>
-URL.revokeObjectURL(
-item.url
-)
-);
+rendered.forEach(item=>{
+URL.revokeObjectURL(item.url);
+});
 
+rendered=[];
 
-renderedImages = [];
+$("pdfPages").innerHTML="";
 
+$("pdfStatus").textContent="";
 
-$("pdfPages")
-.innerHTML = "";
+$("pdfInput").value="";
 
+$("downloadAll").disabled=true;
 
-$("pdfStatus")
-.textContent = "";
-
-
-$("pdfInput")
-.value = "";
-
-
-$("downloadAll")
-.disabled = true;
-
-
-$("clearPdf")
-.disabled = true;
+$("clearPdf").disabled=true;
 
 });
 
 
-/* START HOME */
+/* HOME */
 
 showTool("home");
 
