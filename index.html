@@ -1,38 +1,217 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>QuickTools - Free Image Tools</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QuickTools - Free Online Image Tools</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#152033}
-header{background:linear-gradient(135deg,#1769ff,#6c3cff);color:#fff;padding:34px 18px;text-align:center}
-header h1{margin:0;font-size:34px}
-header p{margin:8px 0;color:#e7edff}
-nav{display:flex;gap:8px;overflow:auto;padding:12px;background:#fff;position:sticky;top:0;z-index:5;border-bottom:1px solid #e5e9f2}
-nav button{border:0;background:#eef2ff;color:#29406d;padding:10px 14px;border-radius:20px;white-space:nowrap;font-weight:700;cursor:pointer}
-nav button.active{background:#1769ff;color:#fff}
-main{max-width:900px;margin:22px auto;padding:0 14px}
-.tool{display:none;background:#fff;border:1px solid #e1e6ef;border-radius:20px;padding:22px;box-shadow:0 8px 30px #13264d12}
-.tool.active{display:block}
-.muted{color:#68758a}
-.drop{border:2px dashed #b8c4d8;border-radius:16px;padding:30px;text-align:center;background:#fafcff;cursor:pointer}
-.drop:hover{background:#f1f6ff;border-color:#1769ff}
-.drop strong{display:block;font-size:18px;margin-bottom:8px}
-.drop input{display:none}
-.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.btn{border:0;border-radius:12px;padding:12px 18px;background:#1769ff;color:#fff;font-weight:800;cursor:pointer}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.btn.secondary{background:#eef2ff;color:#1769ff}
-.result{margin-top:16px;padding:14px;border-radius:12px;background:#f1f6ff}
-.preview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:15px}
-.pdf-page{background:#fff;border:1px solid #dce3ee;border-radius:12px;padding:10px}
-.pdf-page img{width:100%;height:auto;display:block;border-radius:8px;background:#fff}
-.small{font-size:13px;color:#68758a}
-.status{margin-top:12px;font-weight:700}
-footer{text-align:center;color:#7b8799;padding:25px}
-input[type=range]{width:100%}
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7fb;
+color:#152033;
+}
+
+header{
+background:linear-gradient(135deg,#1769ff,#673cff);
+color:white;
+text-align:center;
+padding:38px 15px;
+}
+
+header h1{
+margin:0;
+font-size:36px;
+}
+
+header p{
+margin:10px 0 0;
+font-size:16px;
+color:#e8edff;
+}
+
+nav{
+display:flex;
+gap:8px;
+overflow-x:auto;
+background:white;
+padding:12px;
+position:sticky;
+top:0;
+z-index:10;
+border-bottom:1px solid #ddd;
+}
+
+nav button{
+border:0;
+background:#eef2ff;
+color:#24406e;
+padding:12px 16px;
+border-radius:25px;
+font-weight:bold;
+cursor:pointer;
+white-space:nowrap;
+}
+
+nav button.active{
+background:#1769ff;
+color:white;
+}
+
+main{
+max-width:950px;
+margin:25px auto;
+padding:0 15px;
+}
+
+.tool{
+display:none;
+background:white;
+border-radius:20px;
+padding:25px;
+box-shadow:0 8px 30px rgba(20,40,80,.08);
+}
+
+.tool.active{
+display:block;
+}
+
+.tool h2{
+margin-top:0;
+}
+
+.muted{
+color:#68758a;
+}
+
+.drop{
+border:2px dashed #b9c5d8;
+border-radius:18px;
+padding:40px 20px;
+text-align:center;
+background:#fafcff;
+cursor:pointer;
+transition:.2s;
+}
+
+.drop:hover{
+border-color:#1769ff;
+background:#f1f6ff;
+}
+
+.drop strong{
+display:block;
+font-size:19px;
+margin-bottom:8px;
+}
+
+.drop span{
+color:#718096;
+}
+
+.drop input{
+display:none;
+}
+
+.row{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:18px;
+}
+
+.btn{
+border:0;
+border-radius:12px;
+padding:13px 20px;
+background:#1769ff;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.btn:hover{
+opacity:.9;
+}
+
+.btn:disabled{
+opacity:.45;
+cursor:not-allowed;
+}
+
+.btn.secondary{
+background:#eaf0ff;
+color:#1769ff;
+}
+
+.result{
+margin-top:18px;
+padding:15px;
+background:#f1f6ff;
+border-radius:12px;
+}
+
+.preview-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+margin-top:18px;
+}
+
+.preview-card{
+border:1px solid #dce3ee;
+border-radius:15px;
+padding:10px;
+background:white;
+}
+
+.preview-card img{
+width:100%;
+display:block;
+border-radius:10px;
+}
+
+.preview-card button{
+width:100%;
+margin-top:10px;
+}
+
+.status{
+margin-top:15px;
+font-weight:bold;
+}
+
+input[type="range"]{
+width:100%;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#718096;
+}
+
+@media(max-width:600px){
+
+header h1{
+font-size:30px;
+}
+
+.tool{
+padding:18px;
+}
+
+.drop{
+padding:30px 15px;
+}
+
+}
 </style>
 </head>
 
@@ -44,438 +223,885 @@ input[type=range]{width:100%}
 </header>
 
 <nav>
-<button class="active" data-tool="compress">🗜️ Compress Image</button>
-<button data-tool="imgpdf">🖼️ Image → PDF</button>
-<button data-tool="pdfimg">📄 PDF → Image</button>
+
+<button class="active" data-tool="compress">
+🗜️ Compress Image
+</button>
+
+<button data-tool="imgpdf">
+🖼️ Image → PDF
+</button>
+
+<button data-tool="pdfimg">
+📄 PDF → Image
+</button>
+
 </nav>
 
 <main>
 
-<section id="compress" class="tool active">
-<h2>🗜️ Image Compressor</h2>
-<p class="muted">Compress an image directly in your browser.</p>
+<!-- IMAGE COMPRESSOR -->
 
-<div class="drop" onclick="compFile.click()">
+<section id="compress" class="tool active">
+
+<h2>🗜️ Image Compressor</h2>
+
+<p class="muted">
+Reduce image size directly in your browser.
+</p>
+
+<div class="drop" id="compressDrop">
+
 <strong>Choose an image</strong>
-<span>JPG, PNG, WebP</span>
-<input id="compFile" type="file" accept="image/*">
+
+<span>
+JPG, PNG or WebP
+</span>
+
+<input
+id="compFile"
+type="file"
+accept="image/*"
+>
+
 </div>
 
-<div id="cc" style="display:none">
-<p><b>Quality: <span id="qt">70%</span></b></p>
-<input id="quality" type="range" min="10" max="100" value="70">
+<div id="compressOptions" style="display:none">
+
+<p>
+<b>
+Quality:
+<span id="qualityText">70%</span>
+</b>
+</p>
+
+<input
+id="quality"
+type="range"
+min="10"
+max="100"
+value="70"
+>
 
 <div class="row">
-<button class="btn" id="compressBtn">Compress & Download</button>
+
+<button
+class="btn"
+id="compressBtn"
+>
+Compress & Download
+</button>
+
 </div>
 
-<div id="cr" class="result"></div>
+<div
+id="compressResult"
+class="result"
+>
 </div>
+
+</div>
+
 </section>
+
+
+<!-- IMAGE TO PDF -->
 
 <section id="imgpdf" class="tool">
-<h2>🖼️ Image to PDF</h2>
-<p class="muted">Select JPG images and create a PDF.</p>
 
-<div class="drop" onclick="pdfFiles.click()">
-<strong>Select images</strong>
-<span>JPG recommended</span>
-<input id="pdfFiles" type="file" accept="image/jpeg" multiple>
+<h2>🖼️ Image to PDF</h2>
+
+<p class="muted">
+Select one or multiple images and create a PDF.
+</p>
+
+<div class="drop" id="imagePdfDrop">
+
+<strong>Select Images</strong>
+
+<span>
+JPG, PNG or WebP
+</span>
+
+<input
+id="pdfFiles"
+type="file"
+accept="image/*"
+multiple
+>
+
 </div>
 
-<div id="pi" class="result" style="display:none"></div>
+<div
+id="imagePdfResult"
+class="result"
+style="display:none"
+>
+</div>
+
+<div class="preview-grid" id="imagePreview"></div>
 
 <div class="row">
-<button class="btn" id="makePdf" disabled>Create PDF</button>
+
+<button
+class="btn"
+id="makePdf"
+disabled
+>
+📄 Create PDF
+</button>
+
 </div>
+
 </section>
 
-<section id="pdfimg" class="tool">
-<h2>📄 PDF to Image</h2>
-<p class="muted">Convert every PDF page to a PNG image directly in your browser.</p>
 
-<div class="drop" onclick="pdfInput.click()">
+<!-- PDF TO IMAGE -->
+
+<section id="pdfimg" class="tool">
+
+<h2>📄 PDF to Image</h2>
+
+<p class="muted">
+Convert every PDF page into a PNG image.
+</p>
+
+<div class="drop" id="pdfImageDrop">
+
 <strong>Choose a PDF</strong>
-<span>PDF files only</span>
-<input id="pdfInput" type="file" accept="application/pdf,.pdf">
+
+<span>
+PDF files only
+</span>
+
+<input
+id="pdfInput"
+type="file"
+accept="application/pdf,.pdf"
+>
+
 </div>
 
-<div id="pdfStatus" class="status"></div>
-<div id="pdfPages" class="preview-grid"></div>
+<div
+id="pdfStatus"
+class="status"
+>
+</div>
+
+<div
+id="pdfPages"
+class="preview-grid"
+>
+</div>
 
 <div class="row">
-<button class="btn" id="downloadAll" disabled>⬇️ Download All Images</button>
-<button class="btn secondary" id="clearPdf" disabled>Clear</button>
+
+<button
+class="btn"
+id="downloadAll"
+disabled
+>
+⬇️ Download All
+</button>
+
+<button
+class="btn secondary"
+id="clearPdf"
+disabled
+>
+Clear
+</button>
+
 </div>
+
 </section>
 
 </main>
 
 <footer>
-Files stay in your browser. Your files are not uploaded to a server.
+Files are processed in your browser. Your files are not uploaded to our server.
 </footer>
+
+
+<!-- PDF LIBRARIES -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
-<script>
-const $=id=>document.getElementById(id);
 
-document.querySelectorAll('nav button').forEach(b=>{
-b.onclick=()=>{
-document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
-b.classList.add('active');
-document.querySelectorAll('.tool').forEach(x=>x.classList.remove('active'));
-$(b.dataset.tool).classList.add('active');
-};
+<script>
+
+const $ = (id) => document.getElementById(id);
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+document.querySelectorAll("nav button").forEach(button => {
+
+button.addEventListener("click", () => {
+
+document.querySelectorAll("nav button")
+.forEach(btn => {
+btn.classList.remove("active");
 });
 
-let img=null,name='image';
+button.classList.add("active");
 
-$('compFile').onchange=e=>{
-let f=e.target.files[0];
-if(!f)return;
+document.querySelectorAll(".tool")
+.forEach(section => {
+section.classList.remove("active");
+});
 
-name=f.name.replace(/\.[^.]+$/,'');
-let u=URL.createObjectURL(f);
-let im=new Image();
+const target = $(button.dataset.tool);
 
-im.onload=()=>{
-img=im;
-$('cc').style.display='block';
-$('cr').textContent='Selected: '+f.name+' • '+Math.round(f.size/1024)+' KB';
-URL.revokeObjectURL(u);
-};
-
-im.src=u;
-};
-
-$('quality').oninput=e=>{
-$('qt').textContent=e.target.value+'%';
-};
-
-$('compressBtn').onclick=()=>{
-if(!img)return;
-
-let q=+$('quality').value/100;
-let w=img.naturalWidth;
-let h=img.naturalHeight;
-let max=2000;
-
-if(Math.max(w,h)>max){
-let s=max/Math.max(w,h);
-w=Math.round(w*s);
-h=Math.round(h*s);
+if(target){
+target.classList.add("active");
 }
 
-let c=document.createElement('canvas');
-c.width=w;
-c.height=h;
+});
 
-c.getContext('2d').drawImage(img,0,0,w,h);
+});
 
-c.toBlob(b=>{
-let url=URL.createObjectURL(b);
-let a=document.createElement('a');
 
-a.href=url;
-a.download=name+'-compressed.jpg';
+/* =========================
+   IMAGE COMPRESSOR
+========================= */
 
-document.body.appendChild(a);
-a.click();
-a.remove();
+let selectedImage = null;
+let selectedImageName = "image";
 
-setTimeout(()=>URL.revokeObjectURL(url),1000);
+const compFile = $("compFile");
 
-$('cr').textContent='Done! Output: '+Math.round(b.size/1024)+' KB';
+$("compressDrop").addEventListener("click", () => {
+compFile.click();
+});
 
-},'image/jpeg',q);
-};
+compFile.addEventListener("change", (event) => {
 
-let files=[];
+const file = event.target.files[0];
 
-$('pdfFiles').onchange=e=>{
-files=[...e.target.files];
-
-$('pi').style.display='block';
-$('pi').textContent=files.length+' image(s) selected.';
-$('makePdf').disabled=!files.length;
-};
-
-$('makePdf').onclick=async()=>{
-if(files.some(f=>f.type!=='image/jpeg')){
-alert('Please select JPG images for this first version.');
+if(!file){
 return;
 }
 
-let enc=new TextEncoder();
-let parts=[];
-let offset=[];
-let pos=0;
+selectedImageName =
+file.name.replace(/\.[^/.]+$/, "");
 
-let add=s=>{
-let b=enc.encode(s);
-parts.push(b);
-pos+=b.length;
+const url = URL.createObjectURL(file);
+
+const image = new Image();
+
+image.onload = () => {
+
+selectedImage = image;
+
+$("compressOptions").style.display = "block";
+
+$("compressResult").textContent =
+"Selected: " +
+file.name +
+" • " +
+Math.round(file.size / 1024) +
+" KB";
+
+URL.revokeObjectURL(url);
+
 };
 
-add('%PDF-1.4\n');
+image.onerror = () => {
 
-let objs=[];
-let pageIds=[];
-let contentIds=[];
-let id=3;
+alert("This image could not be opened.");
 
-for(let f of files){
-objs.push({
-id:id++,
-data:new Uint8Array(await f.arrayBuffer())
+URL.revokeObjectURL(url);
+
+};
+
+image.src = url;
+
 });
 
-pageIds.push(id++);
-contentIds.push(id++);
+
+$("quality").addEventListener("input", (event) => {
+
+$("qualityText").textContent =
+event.target.value + "%";
+
+});
+
+
+$("compressBtn").addEventListener("click", () => {
+
+if(!selectedImage){
+
+alert("Please choose an image first.");
+
+return;
 }
 
-let pages=id++;
-let catalog=id++;
+const quality =
+Number($("quality").value) / 100;
 
-for(let i=0;i<objs.length;i++){
+let width = selectedImage.naturalWidth;
+let height = selectedImage.naturalHeight;
 
-let o=objs[i];
+const maxSize = 2000;
 
-offset[o.id]=pos;
+if(Math.max(width,height) > maxSize){
 
-add(`${o.id} 0 obj
-<< /Type /XObject /Subtype /Image /Width 1000 /Height 1000 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${o.data.length} >>
-stream
-`);
+const scale =
+maxSize / Math.max(width,height);
 
-parts.push(o.data);
-pos+=o.data.length;
+width = Math.round(width * scale);
+height = Math.round(height * scale);
 
-add(`
-endstream
-endobj
-`);
-
-let p=pageIds[i];
-let c=contentIds[i];
-
-offset[p]=pos;
-
-add(`${p} 0 obj
-<< /Type /Page /Parent ${pages} 0 R /MediaBox [0 0 600 600] /Resources << /XObject << /Im${i} ${o.id} 0 R >> >> /Contents ${c} 0 R >>
-endobj
-`);
-
-offset[c]=pos;
-
-let st=`q
-600 0 0 600 0 0 cm
-/Im${i} Do
-Q
-`;
-
-add(`${c} 0 obj
-<< /Length ${st.length} >>
-stream
-${st}endstream
-endobj
-`);
 }
 
-offset[pages]=pos;
+const canvas =
+document.createElement("canvas");
 
-add(`${pages} 0 obj
-<< /Type /Pages /Kids [${pageIds.map(x=>x+' 0 R').join(' ')}] /Count ${pageIds.length} >>
-endobj
-`);
+canvas.width = width;
+canvas.height = height;
 
-offset[catalog]=pos;
+const ctx =
+canvas.getContext("2d");
 
-add(`${catalog} 0 obj
-<< /Type /Catalog /Pages ${pages} 0 R >>
-endobj
-`);
+ctx.drawImage(
+selectedImage,
+0,
+0,
+width,
+height
+);
 
-let x=pos;
+canvas.toBlob((blob) => {
 
-add(`xref
-0 ${catalog+1}
-0000000000 65535 f 
-`);
+if(!blob){
 
-for(let i=1;i<=catalog;i++){
-add(String(offset[i]||0).padStart(10,'0')+' 00000 n \n');
+alert("Compression failed.");
+
+return;
 }
 
-add(`trailer
-<< /Size ${catalog+1} /Root ${catalog} 0 R >>
-startxref
-${x}
-%%EOF`);
+const url =
+URL.createObjectURL(blob);
 
-let blob=new Blob(parts,{type:'application/pdf'});
-let url=URL.createObjectURL(blob);
-let a=document.createElement('a');
+const link =
+document.createElement("a");
 
-a.href=url;
-a.download='quicktools-images.pdf';
+link.href = url;
 
-document.body.appendChild(a);
-a.click();
-a.remove();
+link.download =
+selectedImageName +
+"-compressed.jpg";
 
-setTimeout(()=>URL.revokeObjectURL(url),1000);
+document.body.appendChild(link);
+
+link.click();
+
+link.remove();
+
+$("compressResult").textContent =
+"Done! New size: " +
+Math.round(blob.size / 1024) +
+" KB";
+
+setTimeout(() => {
+URL.revokeObjectURL(url);
+},1000);
+
+},"image/jpeg",quality);
+
+});
+
+
+/* =========================
+   IMAGE TO PDF
+========================= */
+
+let selectedPdfImages = [];
+
+$("imagePdfDrop").addEventListener("click", () => {
+$("pdfFiles").click();
+});
+
+
+$("pdfFiles").addEventListener("change", (event) => {
+
+selectedPdfImages =
+Array.from(event.target.files);
+
+$("imagePdfResult").style.display = "block";
+
+$("imagePdfResult").textContent =
+selectedPdfImages.length +
+" image(s) selected.";
+
+$("makePdf").disabled =
+selectedPdfImages.length === 0;
+
+const preview =
+$("imagePreview");
+
+preview.innerHTML = "";
+
+selectedPdfImages.forEach((file) => {
+
+const card =
+document.createElement("div");
+
+card.className =
+"preview-card";
+
+const image =
+document.createElement("img");
+
+const url =
+URL.createObjectURL(file);
+
+image.src = url;
+
+image.onload = () => {
+URL.revokeObjectURL(url);
 };
 
+card.appendChild(image);
 
-/* PDF TO IMAGE */
+preview.appendChild(card);
 
-pdfjsLib.GlobalWorkerOptions.workerSrc=
-'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+});
 
-let renderedImages=[];
+});
 
-$('pdfInput').onchange=async e=>{
 
-let file=e.target.files[0];
+$("makePdf").addEventListener("click", async () => {
 
-if(!file)return;
+if(!selectedPdfImages.length){
 
-renderedImages=[];
-$('pdfPages').innerHTML='';
-$('downloadAll').disabled=true;
-$('clearPdf').disabled=false;
-$('pdfStatus').textContent='Loading PDF...';
+alert("Please select images first.");
+
+return;
+}
+
+if(!window.jspdf){
+
+alert("PDF library is still loading. Please try again.");
+
+return;
+}
+
+const { jsPDF } = window.jspdf;
+
+const pdf =
+new jsPDF("p","mm","a4");
+
+for(let i = 0; i < selectedPdfImages.length; i++){
+
+const file =
+selectedPdfImages[i];
+
+const dataUrl =
+await fileToDataURL(file);
+
+const image =
+await loadImage(dataUrl);
+
+const pageWidth = 210;
+const pageHeight = 297;
+
+const margin = 10;
+
+const maxWidth =
+pageWidth - margin * 2;
+
+const maxHeight =
+pageHeight - margin * 2;
+
+let width = image.naturalWidth;
+let height = image.naturalHeight;
+
+const scale =
+Math.min(
+maxWidth / width,
+maxHeight / height
+);
+
+width *= scale;
+height *= scale;
+
+const x =
+(pageWidth - width) / 2;
+
+const y =
+(pageHeight - height) / 2;
+
+if(i > 0){
+pdf.addPage();
+}
+
+let format = "JPEG";
+
+if(file.type === "image/png"){
+format = "PNG";
+}
+
+if(file.type === "image/webp"){
+format = "WEBP";
+}
+
+pdf.addImage(
+dataUrl,
+format,
+x,
+y,
+width,
+height
+);
+
+}
+
+pdf.save("quicktools-images.pdf");
+
+});
+
+
+function fileToDataURL(file){
+
+return new Promise((resolve,reject) => {
+
+const reader =
+new FileReader();
+
+reader.onload = () =>
+resolve(reader.result);
+
+reader.onerror = reject;
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+
+function loadImage(src){
+
+return new Promise((resolve,reject) => {
+
+const image =
+new Image();
+
+image.onload = () =>
+resolve(image);
+
+image.onerror = reject;
+
+image.src = src;
+
+});
+
+}
+
+
+/* =========================
+   PDF TO IMAGE
+========================= */
+
+if(window.pdfjsLib){
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+}
+
+let renderedImages = [];
+
+
+$("pdfImageDrop").addEventListener("click", () => {
+$("pdfInput").click();
+});
+
+
+$("pdfInput").addEventListener("change", async (event) => {
+
+const file =
+event.target.files[0];
+
+if(!file){
+return;
+}
+
+if(!window.pdfjsLib){
+
+alert(
+"PDF engine is not loaded. Check your internet connection and try again."
+);
+
+return;
+}
+
+renderedImages.forEach(item => {
+
+URL.revokeObjectURL(item.url);
+
+});
+
+renderedImages = [];
+
+$("pdfPages").innerHTML = "";
+
+$("downloadAll").disabled = true;
+
+$("clearPdf").disabled = false;
+
+$("pdfStatus").textContent =
+"Loading PDF...";
 
 try{
 
-let data=new Uint8Array(await file.arrayBuffer());
+const buffer =
+await file.arrayBuffer();
 
-let pdf=await pdfjsLib.getDocument({data}).promise;
-
-$('pdfStatus').textContent=
-${pdf.numPages} page(s) found. Converting...;
-
-for(let n=1;n<=pdf.numPages;n++){
-
-let page=await pdf.getPage(n);
-
-let base=page.getViewport({scale:1});
-
-let scale=Math.min(2,1400/base.width);
-
-let vp=page.getViewport({scale});
-
-let canvas=document.createElement('canvas');
-
-canvas.width=Math.ceil(vp.width);
-canvas.height=Math.ceil(vp.height);
-
-await page.render({
-canvasContext:canvas.getContext('2d',{alpha:false}),
-viewport:vp
+const pdf =
+await pdfjsLib.getDocument({
+data:new Uint8Array(buffer)
 }).promise;
 
-let blob=await new Promise(r=>
-canvas.toBlob(r,'image/png')
+$("pdfStatus").textContent =
+pdf.numPages +
+" page(s) found. Converting...";
+
+
+for(let pageNumber = 1;
+pageNumber <= pdf.numPages;
+pageNumber++){
+
+const page =
+await pdf.getPage(pageNumber);
+
+const originalViewport =
+page.getViewport({
+scale:1
+});
+
+const scale =
+Math.min(
+2,
+1400 / originalViewport.width
 );
 
-let url=URL.createObjectURL(blob);
+const viewport =
+page.getViewport({
+scale:scale
+});
 
-renderedImages.push({
+const canvas =
+document.createElement("canvas");
+
+canvas.width =
+Math.ceil(viewport.width);
+
+canvas.height =
+Math.ceil(viewport.height);
+
+const context =
+canvas.getContext("2d");
+
+await page.render({
+canvasContext:context,
+viewport:viewport
+}).promise;
+
+const blob =
+await new Promise(resolve => {
+
+canvas.toBlob(
+resolve,
+"image/png"
+);
+
+});
+
+if(!blob){
+
+throw new Error(
+"Could not create image."
+);
+
+}
+
+const url =
+URL.createObjectURL(blob);
+
+const item = {
 blob:blob,
 url:url,
-name:page-${n}.png
+name:"page-" + pageNumber + ".png"
+};
+
+renderedImages.push(item);
+
+
+/* CARD */
+
+const card =
+document.createElement("div");
+
+card.className =
+"preview-card";
+
+
+const title =
+document.createElement("b");
+
+title.textContent =
+"Page " + pageNumber;
+
+
+const image =
+document.createElement("img");
+
+image.src = url;
+
+image.alt =
+"PDF page " + pageNumber;
+
+
+const download =
+document.createElement("button");
+
+download.className =
+"btn";
+
+download.textContent =
+"⬇️ Download";
+
+
+download.addEventListener("click", () => {
+
+const link =
+document.createElement("a");
+
+link.href = url;
+
+link.download =
+item.name;
+
+document.body.appendChild(link);
+
+link.click();
+
+link.remove();
+
 });
 
-let card=document.createElement('div');
-card.className='pdf-page';
 
-let title=document.createElement('div');
-title.className='small';
-title.textContent=Page ${n};
+card.appendChild(title);
 
-let preview=document.createElement('img');
-preview.src=url;
-preview.alt=PDF page ${n};
+card.appendChild(image);
 
-let download=document.createElement('button');
+card.appendChild(download);
 
-download.className='btn';
-download.textContent='⬇️ Download';
-download.style.marginTop='10px';
+$("pdfPages").appendChild(card);
 
-download.onclick=()=>{
-let a=document.createElement('a');
 
-a.href=url;
-a.download=page-${n}.png;
+$("pdfStatus").textContent =
+"Converted " +
+pageNumber +
+" of " +
+pdf.numPages +
+" page(s).";
 
-document.body.appendChild(a);
-a.click();
-a.remove();
-};
-
-card.append(title,preview,download);
-
-$('pdfPages').appendChild(card);
-
-$('pdfStatus').textContent=
-Converted ${n} of ${pdf.numPages} page(s).;
 }
 
-$('downloadAll').disabled=!renderedImages.length;
+$("downloadAll").disabled =
+renderedImages.length === 0;
 
-$('pdfStatus').textContent=
-Done! ${renderedImages.length} page(s) converted to PNG.;
+$("pdfStatus").textContent =
+"✅ Done! " +
+renderedImages.length +
+" page(s) converted to PNG.";
 
-}catch(err){
+}catch(error){
 
-console.error(err);
+console.error(error);
 
-$('pdfStatus').textContent=
-'Could not read this PDF. Please try another PDF.';
+$("pdfStatus").textContent =
+"❌ Could not read this PDF.";
 
-alert('PDF conversion failed. Please try another PDF.');
-}
-};
-
-$('downloadAll').onclick=()=>{
-
-renderedImages.forEach((item,i)=>{
-
-setTimeout(()=>{
-
-let a=document.createElement('a');
-
-a.href=item.url;
-a.download=item.name;
-
-document.body.appendChild(a);
-a.click();
-a.remove();
-
-},i*250);
-
-});
-};
-
-$('clearPdf').onclick=()=>{
-
-renderedImages.forEach(x=>
-URL.revokeObjectURL(x.url)
+alert(
+"PDF conversion failed. Please try another PDF."
 );
 
-renderedImages=[];
+}
 
-$('pdfPages').innerHTML='';
-$('pdfStatus').textContent='';
-$('pdfInput').value='';
+});
 
-$('downloadAll').disabled=true;
-$('clearPdf').disabled=true;
-};
+
+/* =========================
+   DOWNLOAD ALL
+========================= */
+
+$("downloadAll").addEventListener("click", () => {
+
+if(!renderedImages.length){
+return;
+}
+
+renderedImages.forEach((item,index) => {
+
+setTimeout(() => {
+
+const link =
+document.createElement("a");
+
+link.href =
+item.url;
+
+link.download =
+item.name;
+
+document.body.appendChild(link);
+
+link.click();
+
+link.remove();
+
+},index * 300);
+
+});
+
+});
+
+
+/* =========================
+   CLEAR PDF
+========================= */
+
+$("clearPdf").addEventListener("click", () => {
+
+renderedImages.forEach(item => {
+
+URL.revokeObjectURL(item.url);
+
+});
+
+renderedImages = [];
+
+$("pdfPages").innerHTML = "";
+
+$("pdfStatus").textContent = "";
+
+$("pdfInput").value = "";
+
+$("downloadAll").disabled = true;
+
+$("clearPdf").disabled = true;
+
+});
+
 
 </script>
 
