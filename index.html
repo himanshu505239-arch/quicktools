@@ -3,39 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>QuickTools</title>
+<title>QuickTools - Free Online Tools</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f5f7fb;color:#172033}
-header{background:linear-gradient(135deg,#1769ff,#6c3cff);color:white;text-align:center;padding:38px 15px}
-h1{margin:0;font-size:36px}
-header p{margin:8px 0}
-nav{display:flex;gap:8px;overflow:auto;background:white;padding:12px;position:sticky;top:0;z-index:5}
-nav button,.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:bold;cursor:pointer}
-nav button{background:#edf2ff;color:#2450a4;white-space:nowrap}
-nav button.active,.btn{background:#1769ff;color:white}
-main{max-width:900px;margin:auto;padding:20px 15px}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fc;color:#172033}
+header{background:linear-gradient(135deg,#145cf5,#713cff);color:#fff;text-align:center;padding:55px 15px 65px}
+header h1{margin:0;font-size:44px}
+header p{margin:10px 0;color:#e7edff}
+nav{position:sticky;top:0;z-index:10;display:flex;gap:8px;overflow:auto;padding:12px;background:#ffffffee;backdrop-filter:blur(12px);border-bottom:1px solid #e4e8f0}
+nav button{border:1px solid #e0e6f0;background:#f4f7fc;color:#40516d;padding:11px 16px;border-radius:25px;font-weight:bold;white-space:nowrap;cursor:pointer}
+nav button.active{background:linear-gradient(135deg,#1769ff,#613cff);color:#fff;border-color:transparent;box-shadow:0 5px 15px #1769ff30}
+main{max-width:1000px;margin:auto;padding:30px 15px 50px}
 .page{display:none}
 .page.active{display:block}
-.box{background:white;border-radius:18px;padding:22px;box-shadow:0 5px 25px #00000010}
-.drop{border:2px dashed #b8c4d8;border-radius:15px;padding:30px;text-align:center;cursor:pointer;background:#fafcff}
-.drop strong{display:block;font-size:18px;margin-bottom:8px}
+h2{font-size:28px}
+.muted{color:#718096;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:22px}
+.card{background:#fff;border:1px solid #e2e7f0;border-radius:20px;padding:24px;cursor:pointer;box-shadow:0 8px 28px #172b4d0b;transition:.2s}
+.card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #172b4d18}
+.card .ico{font-size:38px}
+.card h3{margin:12px 0 7px}
+.card p{margin:0;color:#718096;line-height:1.5}
+.box{background:#fff;border:1px solid #e1e7f0;border-radius:22px;padding:28px;box-shadow:0 10px 35px #172b4d0c}
+.drop{margin-top:20px;border:2px dashed #b8c6db;border-radius:18px;padding:38px 15px;text-align:center;background:#fafcff;cursor:pointer;transition:.2s}
+.drop:hover{border-color:#1769ff;background:#f2f6ff}
+.drop strong{display:block;font-size:19px;margin-bottom:8px}
+.drop span{color:#718096;font-size:14px}
 .drop input{display:none}
-.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:18px}
-.opt{background:#f6f8fc;padding:12px;border-radius:12px}
-.opt label{display:block;font-weight:bold;margin-bottom:7px}
-select,input[type=number]{width:100%;padding:10px;border:1px solid #ccd5e3;border-radius:8px}
-.result{margin-top:15px;padding:13px;background:#eef5ff;border-radius:10px}
-.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
-.card{background:white;padding:20px;border-radius:17px;box-shadow:0 5px 20px #0000000d;cursor:pointer}
-.card h3{margin:8px 0}
-.muted{color:#69778c}
-.preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:15px}
-.preview div{background:white;border:1px solid #ddd;border-radius:12px;padding:10px}
-.preview img{width:100%;border-radius:8px}
-footer{text-align:center;padding:25px;color:#718096}
+.options{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:13px;margin-top:18px}
+.opt{background:#f7f9fd;border:1px solid #e1e7ef;border-radius:13px;padding:13px}
+.opt label{display:block;font-weight:bold;font-size:13px;margin-bottom:7px}
+select,input[type=number]{width:100%;padding:10px;border:1px solid #ccd6e5;border-radius:9px;background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
+.btn{border:0;border-radius:11px;padding:12px 18px;background:linear-gradient(135deg,#1769ff,#613cff);color:#fff;font-weight:bold;cursor:pointer;box-shadow:0 6px 16px #1769ff25}
+.btn:disabled{opacity:.45}
+.result{margin-top:15px;padding:14px;border-radius:12px;background:#eff5ff;border:1px solid #dbe7ff;line-height:1.6}
+.preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:18px}
+.preview>div{background:#fff;border:1px solid #dfe5ee;border-radius:14px;padding:10px;box-shadow:0 5px 18px #172b4d08}
+.preview img{width:100%;display:block;border-radius:9px;margin-bottom:9px}
+footer{text-align:center;color:#7a8799;background:#fff;border-top:1px solid #e2e7ef;padding:30px}
+@media(max-width:600px){
+header{padding:45px 15px 55px}
+header h1{font-size:36px}
+main{padding:24px 12px 40px}
+.box{padding:20px}
+.cards{grid-template-columns:1fr}
+}
 </style>
 </head>
 
@@ -43,53 +57,52 @@ footer{text-align:center;padding:25px;color:#718096}
 
 <header>
 <h1>⚡ QuickTools</h1>
-<p>Free online tools — fast, simple & private</p>
+<p>Fast • Simple • Free browser tools</p>
 </header>
 
 <nav>
 <button class="active" data-page="home">🏠 Home</button>
-<button data-page="compress">🗜️ Compress Image</button>
+<button data-page="compress">🗜️ Compress</button>
 <button data-page="imgpdf">🖼️ Image → PDF</button>
 <button data-page="pdfimg">📄 PDF → Image</button>
 </nav>
 
 <main>
 
-<!-- HOME -->
 <section id="home" class="page active">
 <h2>All Tools</h2>
-<p class="muted">Useful tools that work directly in your browser.</p>
+<p class="muted">Everything you need for quick image and PDF tasks.</p>
 
 <div class="cards">
-
 <div class="card" data-open="compress">
-<h3>🗜️ Image Compressor</h3>
-<p class="muted">Compress an image to your chosen size.</p>
+<div class="ico">🗜️</div>
+<h3>Image Compressor</h3>
+<p>Reduce image size with a target KB or MB.</p>
 </div>
 
 <div class="card" data-open="imgpdf">
-<h3>🖼️ Image to PDF</h3>
-<p class="muted">Convert multiple images into one PDF.</p>
+<div class="ico">🖼️</div>
+<h3>Image to PDF</h3>
+<p>Convert multiple images into a single PDF.</p>
 </div>
 
 <div class="card" data-open="pdfimg">
-<h3>📄 PDF to Image</h3>
-<p class="muted">Convert PDF pages into PNG or JPG.</p>
+<div class="ico">📄</div>
+<h3>PDF to Image</h3>
+<p>Convert PDF pages into PNG or JPG images.</p>
 </div>
-
 </div>
 </section>
 
 
-<!-- COMPRESSOR -->
 <section id="compress" class="page">
 <div class="box">
 
 <h2>🗜️ Image Compressor</h2>
-<p class="muted">Choose the maximum file size you want.</p>
+<p class="muted">Choose your target size and download the compressed image.</p>
 
 <div class="drop" id="compressDrop">
-<strong>Choose an Image</strong>
+<strong>📁 Choose Image</strong>
 <span>JPG, PNG or WebP</span>
 <input id="compressFile" type="file" accept="image/*">
 </div>
@@ -112,7 +125,7 @@ footer{text-align:center;padding:25px;color:#718096}
 
 <div class="opt" id="customArea" style="display:none">
 <label>Custom KB</label>
-<input id="customKB" type="number" value="300" min="10">
+<input id="customKB" type="number" min="10" value="300">
 </div>
 
 <div class="opt">
@@ -129,7 +142,7 @@ footer{text-align:center;padding:25px;color:#718096}
 </div>
 
 <div class="row">
-<button class="btn" id="compressBtn">Compress & Download</button>
+<button class="btn" id="compressBtn">⬇️ Compress & Download</button>
 </div>
 
 <div id="compressResult" class="result"></div>
@@ -139,16 +152,15 @@ footer{text-align:center;padding:25px;color:#718096}
 </section>
 
 
-<!-- IMAGE TO PDF -->
 <section id="imgpdf" class="page">
 <div class="box">
 
 <h2>🖼️ Image to PDF</h2>
-<p class="muted">Select multiple images.</p>
+<p class="muted">Select multiple images and create one PDF.</p>
 
 <div class="drop" id="imageDrop">
-<strong>Select Images</strong>
-<span>Multiple images supported</span>
+<strong>📁 Select Images</strong>
+<span>Multiple JPG, PNG or WebP files</span>
 <input id="imageFiles" type="file" accept="image/*" multiple>
 </div>
 
@@ -178,22 +190,21 @@ footer{text-align:center;padding:25px;color:#718096}
 <div id="imagePreview" class="preview"></div>
 
 <div class="row">
-<button class="btn" id="makePDF" disabled>Create PDF</button>
+<button class="btn" id="makePDF" disabled>📄 Create PDF</button>
 </div>
 
 </div>
 </section>
 
 
-<!-- PDF TO IMAGE -->
 <section id="pdfimg" class="page">
 <div class="box">
 
 <h2>📄 PDF to Image</h2>
-<p class="muted">Convert PDF pages into PNG or JPG.</p>
+<p class="muted">Convert PDF pages into high-quality images.</p>
 
 <div class="drop" id="pdfDrop">
-<strong>Choose PDF</strong>
+<strong>📁 Choose PDF</strong>
 <span>PDF file only</span>
 <input id="pdfFile" type="file" accept=".pdf,application/pdf">
 </div>
@@ -209,7 +220,7 @@ footer{text-align:center;padding:25px;color:#718096}
 </div>
 
 <div class="opt">
-<label>🎯 Quality</label>
+<label>🎯 Resolution</label>
 <select id="scale">
 <option value="1">Low</option>
 <option value="1.5" selected>Medium</option>
@@ -228,11 +239,10 @@ footer{text-align:center;padding:25px;color:#718096}
 </div>
 
 <div id="pageSelect" class="result" style="display:none"></div>
-
 <div id="pdfStatus" class="result"></div>
 
 <div class="row">
-<button class="btn" id="convertPDF" disabled>Convert PDF</button>
+<button class="btn" id="convertPDF" disabled>🔄 Convert PDF</button>
 </div>
 
 <div id="pdfPreview" class="preview"></div>
@@ -246,55 +256,38 @@ footer{text-align:center;padding:25px;color:#718096}
 © 2026 QuickTools • Free browser-based tools
 </footer>
 
-
-<!-- PDF LIBRARIES -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-
 
 <script>
 
-/* ---------- NAVIGATION ---------- */
-
 function openPage(id){
-
 document.querySelectorAll(".page").forEach(function(x){
 x.classList.remove("active");
 });
-
 document.getElementById(id).classList.add("active");
 
 document.querySelectorAll("nav button").forEach(function(x){
-x.classList.remove("active");
-
-if(x.dataset.page===id){
-x.classList.add("active");
-}
-
+x.classList.toggle("active",x.dataset.page===id);
 });
 
 window.scrollTo(0,0);
 }
 
 document.querySelectorAll("nav button").forEach(function(btn){
-
 btn.onclick=function(){
 openPage(btn.dataset.page);
 };
-
 });
 
 document.querySelectorAll("[data-open]").forEach(function(card){
-
 card.onclick=function(){
 openPage(card.dataset.open);
 };
-
 });
 
 
-/* ---------- COMPRESSOR ---------- */
+/* COMPRESSOR */
 
 var compressorImage=null;
 var compressorName="image";
@@ -307,7 +300,6 @@ document.getElementById("compressFile").click();
 document.getElementById("compressFile").onchange=function(e){
 
 var file=e.target.files[0];
-
 if(!file)return;
 
 compressorName=file.name.replace(/\.[^/.]+$/,"");
@@ -319,11 +311,10 @@ var img=new Image();
 img.onload=function(){
 
 compressorImage=img;
-
 document.getElementById("compressOptions").style.display="block";
 
 document.getElementById("compressResult").innerHTML=
-"Original size: <b>"+sizeText(originalBytes)+"</b>";
+"Original size: <b>"+formatSize(originalBytes)+"</b>";
 
 URL.revokeObjectURL(url);
 };
@@ -331,155 +322,90 @@ URL.revokeObjectURL(url);
 img.src=url;
 };
 
-
 document.getElementById("target").onchange=function(){
-
 document.getElementById("customArea").style.display=
 this.value==="custom"?"block":"none";
-
 };
 
-
-function sizeText(bytes){
-
-if(bytes<1024)
-return bytes+" B";
-
-if(bytes<1024*1024)
-return (bytes/1024).toFixed(1)+" KB";
-
-return (bytes/1024/1024).toFixed(2)+" MB";
+function formatSize(bytes){
+if(bytes<1024)return bytes+" B";
+if(bytes<1048576)return (bytes/1024).toFixed(1)+" KB";
+return (bytes/1048576).toFixed(2)+" MB";
 }
 
-
-function makeJPEG(img,w,h,q){
-
+function makeJpeg(img,w,h,q){
 return new Promise(function(resolve){
-
-var canvas=document.createElement("canvas");
-
-canvas.width=w;
-canvas.height=h;
-
-var ctx=canvas.getContext("2d");
-
-ctx.fillStyle="white";
+var c=document.createElement("canvas");
+c.width=w;c.height=h;
+var ctx=c.getContext("2d");
+ctx.fillStyle="#fff";
 ctx.fillRect(0,0,w,h);
-
 ctx.drawImage(img,0,0,w,h);
-
-canvas.toBlob(function(blob){
-
-resolve(blob);
-
-},"image/jpeg",q);
-
+c.toBlob(function(b){resolve(b)},"image/jpeg",q);
 });
-
 }
-
 
 document.getElementById("compressBtn").onclick=async function(){
 
 if(!compressorImage)return;
 
-var targetValue=document.getElementById("target").value;
-
-var targetKB;
-
-if(targetValue==="custom"){
-
-targetKB=parseInt(
-document.getElementById("customKB").value
-);
-
-}else{
-
-targetKB=parseInt(targetValue);
-
-}
+var value=document.getElementById("target").value;
+var targetKB=value==="custom"
+?parseInt(document.getElementById("customKB").value)
+:parseInt(value);
 
 if(!targetKB||targetKB<10){
-
-alert("Please enter a valid size.");
-
+alert("Enter a valid target size.");
 return;
 }
 
 var targetBytes=targetKB*1024;
-
 var w=compressorImage.naturalWidth;
 var h=compressorImage.naturalHeight;
 
-var max=parseInt(
-document.getElementById("maxWidth").value
-);
+var max=parseInt(document.getElementById("maxWidth").value);
 
-if(max>0 && w>max){
-
-var ratio=max/w;
-
-w=Math.round(w*ratio);
-h=Math.round(h*ratio);
-
+if(max>0&&w>max){
+var r=max/w;
+w=Math.round(w*r);
+h=Math.round(h*r);
 }
 
-var quality=.85;
-var blob=await makeJPEG(
-compressorImage,w,h,quality
-);
+var q=.85;
+var blob=await makeJpeg(compressorImage,w,h,q);
 
-/* Try to reach target size */
-
-for(var i=0;i<8 && blob.size>targetBytes;i++){
-
-quality-=.08;
-
-if(quality<.2)
-break;
-
-blob=await makeJPEG(
-compressorImage,w,h,quality
-);
-
+for(var i=0;i<8&&blob.size>targetBytes;i++){
+q-=.08;
+if(q<.2)break;
+blob=await makeJpeg(compressorImage,w,h,q);
 }
 
-/* If still too large reduce dimensions */
-
-for(var j=0;j<8 && blob.size>targetBytes;j++){
-
+for(var j=0;j<8&&blob.size>targetBytes;j++){
 w=Math.round(w*.85);
 h=Math.round(h*.85);
-
-blob=await makeJPEG(
-compressorImage,w,h,.65
-);
-
+blob=await makeJpeg(compressorImage,w,h,.65);
 }
 
 var url=URL.createObjectURL(blob);
-
 var a=document.createElement("a");
 
 a.href=url;
 a.download=compressorName+"-compressed.jpg";
-
 a.click();
 
 document.getElementById("compressResult").innerHTML=
-"Original: <b>"+sizeText(originalBytes)+
-"</b><br>Final: <b>"+sizeText(blob.size)+
-"</b><br>Target: <b>"+targetKB+" KB</b>"+
-"<br>Dimensions: <b>"+w+" × "+h+" px</b>";
+"Original: <b>"+formatSize(originalBytes)+"</b><br>"+
+"Final: <b>"+formatSize(blob.size)+"</b><br>"+
+"Target: <b>"+targetKB+" KB</b><br>"+
+"Size: <b>"+w+" × "+h+" px</b>";
 
 setTimeout(function(){
 URL.revokeObjectURL(url);
 },2000);
-
 };
 
 
-/* ---------- IMAGE TO PDF ---------- */
+/* IMAGE TO PDF */
 
 var imageFiles=[];
 
@@ -492,139 +418,89 @@ document.getElementById("imageFiles").onchange=function(e){
 imageFiles=Array.from(e.target.files);
 
 document.getElementById("imageInfo").style.display="block";
-
 document.getElementById("imageInfo").innerHTML=
-"<b>"+imageFiles.length+
-"</b> image(s) selected.";
+"<b>"+imageFiles.length+"</b> image(s) selected.";
 
-document.getElementById("makePDF").disabled=
-imageFiles.length===0;
+document.getElementById("makePDF").disabled=!imageFiles.length;
 
 var preview=document.getElementById("imagePreview");
-
 preview.innerHTML="";
 
 imageFiles.forEach(function(file){
-
 var box=document.createElement("div");
-
 var img=document.createElement("img");
-
 img.src=URL.createObjectURL(file);
-
 box.appendChild(img);
-
 preview.appendChild(box);
-
 });
-
 };
-
 
 function readData(file){
-
 return new Promise(function(resolve,reject){
-
-var reader=new FileReader();
-
-reader.onload=function(){
-resolve(reader.result);
-};
-
-reader.onerror=reject;
-
-reader.readAsDataURL(file);
-
+var r=new FileReader();
+r.onload=function(){resolve(r.result)};
+r.onerror=reject;
+r.readAsDataURL(file);
 });
-
 }
-
 
 document.getElementById("makePDF").onclick=async function(){
 
-if(!imageFiles.length)return;
-
-if(!window.jspdf){
-
-alert("PDF library loading. Try again.");
-
-return;
-
-}
+if(!imageFiles.length||!window.jspdf)return;
 
 var jsPDF=window.jspdf.jsPDF;
 
 var pdf=new jsPDF(
 "p",
 "mm",
-document.getElementById("pdfSize").value==="letter"
-?"letter":"a4"
+document.getElementById("pdfSize").value==="letter"?"letter":"a4"
 );
 
-var margin=parseInt(
-document.getElementById("pdfMargin").value
-);
+var margin=parseInt(document.getElementById("pdfMargin").value);
 
 for(var i=0;i<imageFiles.length;i++){
 
 if(i>0)pdf.addPage();
 
 var data=await readData(imageFiles[i]);
-
 var img=new Image();
 
 await new Promise(function(resolve){
-
 img.onload=resolve;
 img.src=data;
-
 });
 
-var pageW=pdf.internal.pageSize.getWidth();
-var pageH=pdf.internal.pageSize.getHeight();
+var pw=pdf.internal.pageSize.getWidth();
+var ph=pdf.internal.pageSize.getHeight();
 
-var maxW=pageW-margin*2;
-var maxH=pageH-margin*2;
-
-var ratio=Math.min(
-maxW/img.width,
-maxH/img.height
-);
+var maxW=pw-margin*2;
+var maxH=ph-margin*2;
+var ratio=Math.min(maxW/img.width,maxH/img.height);
 
 var w=img.width*ratio;
 var h=img.height*ratio;
 
-var x=(pageW-w)/2;
-var y=(pageH-h)/2;
-
-var type=imageFiles[i].type==="image/png"
-?"PNG":"JPEG";
-
 pdf.addImage(
 data,
-type,
-x,
-y,
+imageFiles[i].type==="image/png"?"PNG":"JPEG",
+(pw-w)/2,
+(ph-h)/2,
 w,
 h
 );
-
 }
 
 pdf.save("quicktools-images.pdf");
-
 };
 
 
-/* ---------- PDF TO IMAGE ---------- */
+/* PDF TO IMAGE */
 
 var pdfDocument=null;
 
 if(window.pdfjsLib){
-
 pdfjsLib.GlobalWorkerOptions.workerSrc=
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-
 }
 
 document.getElementById("pdfDrop").onclick=function(){
@@ -634,19 +510,14 @@ document.getElementById("pdfFile").click();
 document.getElementById("pdfFile").onchange=async function(e){
 
 var file=e.target.files[0];
-
 if(!file)return;
 
 if(!window.pdfjsLib){
-
-alert("PDF engine could not load. Internet connection required.");
-
+alert("PDF engine could not load.");
 return;
-
 }
 
-document.getElementById("pdfStatus").innerHTML=
-"Loading PDF...";
+document.getElementById("pdfStatus").innerHTML="Loading PDF...";
 
 try{
 
@@ -657,45 +528,35 @@ data:new Uint8Array(buffer)
 }).promise;
 
 document.getElementById("pdfStatus").innerHTML=
-"PDF loaded: <b>"+
-pdfDocument.numPages+
-"</b> page(s).";
+"PDF loaded: <b>"+pdfDocument.numPages+"</b> page(s).";
 
 document.getElementById("convertPDF").disabled=false;
 
-var select=document.getElementById("pageSelect");
-
-select.innerHTML="<b>Select pages:</b><br>";
+var box=document.getElementById("pageSelect");
+box.innerHTML="<b>Select pages:</b><br>";
 
 for(var i=1;i<=pdfDocument.numPages;i++){
 
-select.innerHTML+=
-'<label style="display:inline-block;margin:7px">'+
+box.innerHTML+=
+'<label style="display:inline-block;margin:6px">'+
 '<input class="pageCheck" type="checkbox" value="'+i+'" checked> '+
 i+
 '</label>';
-
 }
 
 }catch(error){
 
-console.error(error);
-
 document.getElementById("pdfStatus").innerHTML=
-"❌ This PDF could not be loaded.";
+"❌ Could not load PDF.";
 
 }
-
 };
-
 
 document.getElementById("pages").onchange=function(){
 
 document.getElementById("pageSelect").style.display=
 this.value==="selected"?"block":"none";
-
 };
-
 
 document.getElementById("convertPDF").onclick=async function(){
 
@@ -718,16 +579,12 @@ pageNumbers.push(parseInt(x.value));
 }
 
 if(!pageNumbers.length){
-
 alert("Select at least one page.");
-
 return;
-
 }
 
 var format=document.getElementById("format").value;
 var scale=parseFloat(document.getElementById("scale").value);
-
 var preview=document.getElementById("pdfPreview");
 
 preview.innerHTML="";
@@ -737,75 +594,58 @@ for(var p=0;p<pageNumbers.length;p++){
 var number=pageNumbers[p];
 
 document.getElementById("pdfStatus").innerHTML=
-"Converting page <b>"+
-(p+1)+
-"</b> of <b>"+
-pageNumbers.length+
-"</b>...";
+"Converting page "+(p+1)+" of "+pageNumbers.length+"...";
 
 var page=await pdfDocument.getPage(number);
 
-var viewport=page.getViewport({
-scale:scale
-});
+var viewport=page.getViewport({scale:scale});
 
 var canvas=document.createElement("canvas");
 
 canvas.width=Math.ceil(viewport.width);
 canvas.height=Math.ceil(viewport.height);
 
-var ctx=canvas.getContext("2d");
-
 await page.render({
-canvasContext:ctx,
+canvasContext:canvas.getContext("2d"),
 viewport:viewport
 }).promise;
 
-var mime=
-format==="jpg"
-?"image/jpeg"
-:"image/png";
+var mime=format==="jpg"?"image/jpeg":"image/png";
 
 var blob=await new Promise(function(resolve){
-
-canvas.toBlob(
-resolve,
-mime,
-format==="jpg"?.92:undefined
-);
-
+canvas.toBlob(function(b){
+resolve(b);
+},mime,.92);
 });
 
 var url=URL.createObjectURL(blob);
 
 var box=document.createElement("div");
 
+var title=document.createElement("b");
+title.textContent="Page "+number;
+
 var img=document.createElement("img");
 img.src=url;
 
 var button=document.createElement("button");
-
 button.className="btn";
 button.textContent="⬇️ Download";
 
 button.onclick=function(){
 
 var a=document.createElement("a");
-
 a.href=url;
-a.download=
-"quicktools-page-"+number+"."+format;
-
+a.download="quicktools-page-"+number+"."+format;
 a.click();
 
 };
 
-box.innerHTML="<b>Page "+number+"</b>";
+box.appendChild(title);
 box.appendChild(img);
 box.appendChild(button);
 
 preview.appendChild(box);
-
 }
 
 document.getElementById("pdfStatus").innerHTML=
